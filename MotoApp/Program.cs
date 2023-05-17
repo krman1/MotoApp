@@ -1,15 +1,8 @@
-﻿var stack = new Stack<double>();
-stack.Push(30);
-stack.Push(45);
-stack.Push(26);
-stack.Push(32);
+﻿using MotoApp.Repositories;
+using MotoApp.Entities;
 
-double sum = 0;
-while(stack.Count > 0)
-{
-    Console.WriteLine(stack.Peek());
-
-    sum += stack.Pop();
-}
-
-Console.WriteLine("Suma wyrazów: " + sum);
+var employseeRepository = new Employeerepository();
+employseeRepository.Add(new Employee { FirstName = "Adam" });
+employseeRepository.Add(new Employee { FirstName = "Piotr" });
+employseeRepository.Add(new Employee { FirstName = "Zuzia" });
+employseeRepository.Save();
