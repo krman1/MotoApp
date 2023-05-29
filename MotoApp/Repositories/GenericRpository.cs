@@ -2,21 +2,19 @@
 
 namespace MotoApp.Repositories
 {
-    public class GenericRepository<TEntity, TKey> 
-        where TEntity : class, IEntity,new()
-        where TKey : struct
+    public class GenericRepository<T> 
+        where T : class, IEntity,new()
     {
-        public TKey key { get; set; }
 
-        protected readonly List<TEntity> _items = new();
+        protected readonly List<T> _items = new();
 
-        public void Add (TEntity item)
+        public void Add (T item)
         {
             item.Id = _items.Count+1;
             _items.Add (item);
         }
         
-        public TEntity GetById(int id)
+        public T GetById(int id)
         {
             return _items.Single(item => item.Id == id);
         }
