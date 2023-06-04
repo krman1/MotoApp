@@ -2,7 +2,7 @@
 
 namespace MotoApp.Repositories
 {
-    public class Employeerepository
+    public class EmployeeRepository
     {
         private readonly List<Employee> _employees = new();
 
