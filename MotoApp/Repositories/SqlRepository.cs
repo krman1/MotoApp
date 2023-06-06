@@ -5,12 +5,12 @@ namespace MotoApp.Repositories
 {
     public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
     {
-        private readonly DbSet<Employee> _dbSet;
+        private readonly DbSet<T> _dbSet;
         private readonly DbContext _dbContext;
         public SqlRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
-            _dbSet = _dbContext.Set<Employee>();
+            _dbSet = _dbContext.Set<T>();
         }
         public IEnumerable<T> GetAll()
         {
@@ -18,13 +18,13 @@ namespace MotoApp.Repositories
         }
         public T GetById(int id)
         {
-            return _dbSet.Find(id); 
+            return _dbSet.Find(id);
         }
         public void Add(T item)
         {
             _dbSet.Add(item);
         }
-        public void Remove(Employee item)
+        public void Remove(T item)
         {
             _dbSet.Remove(item);
         }
