@@ -18,7 +18,7 @@ namespace MotoApp.Repositories
                     Console.WriteLine(employee);
                 } 
             }
-        public Employee GetById(int id)
+        public Employee? GetById(int id)
         {
             return _employees.Single(item => item.Id == id);
         }

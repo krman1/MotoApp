@@ -9,3 +9,10 @@ employeeRepository.Add(new Employee { FirstName = "Zuzia" });
 
 GetEmployeeById(employeeRepository);
 
+static void GetEmployeeById (IRepository<Employee> employeeRepository)
+{
+    var employee = employeeRepository.GetById(1);
+    Console.WriteLine(employee.ToString());
+
+}
+
