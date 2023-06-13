@@ -3,16 +3,17 @@ using MotoApp.Entities;
 using MotoApp.Data;
 
 var employeeRepository = new SqlRepository<Employee>(new MotoAppDbContext());
-employeeRepository.Add(new Employee { FirstName = "Adam" });
-employeeRepository.Add(new Employee { FirstName = "Piotr" });
-employeeRepository.Add(new Employee { FirstName = "Zuzia" });
 
-GetEmployeeById(employeeRepository);
+AddEmployees(employeeRepository);
+AddManagers(employeeRepository);
+WriteAllToConsole(employeeRepository);
 
-static void GetEmployeeById (IRepository<Employee> employeeRepository)
+
+static void AddEmployees(IRepository<Employee> employeeRepository)
 {
-    var employee = employeeRepository.GetById(1);
-    Console.WriteLine(employee.ToString());
-
+    employeeRepository.Add(new Employee { FirstName = "Adam" });
+    employeeRepository.Add(new Employee { FirstName = "Piotr" });
+    employeeRepository.Add(new Employee { FirstName = "Zuzia" });
+    employeeRepository.Save();
 }
 
