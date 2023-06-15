@@ -16,4 +16,17 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
     employeeRepository.Add(new Employee { FirstName = "Zuzia" });
     employeeRepository.Save();
 }
-
+static void AddManagers(IRepository<Employee> managerRepository)
+{
+    managerRepository.Add(new Manager { FirstName = "Przemek" });
+    managerRepository.Add(new Manager { FirstName = "Tomek" });
+    managerRepository.Save();
+}
+static void WriteAllToConsole(IReadRepository<IEntity> repository)
+{
+    var items = repository.GetAll();
+    foreach (var item in items)
+    {
+        Console.WriteLine(item);
+    }
+}
