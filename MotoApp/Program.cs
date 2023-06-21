@@ -24,13 +24,14 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
     employeeRepository.Save();*/
 }
 
-static void AddBatch(IRepository<Employee> employeeRepository, Employee[] employees)
+static void AddBatch<T>(IRepository<T> repository, T[] items)
+    where T : class, IEntity
 {
-    foreach (var employee in employees)
+    foreach (var item in items)
     {
-        employeeRepository.Add(employee);
+        repository.Add(item);
     }
-    employeeRepository.Save();
+    repository.Save();
 }
 
 static void WriteAllToConsole(IReadRepository<IEntity> repository)
