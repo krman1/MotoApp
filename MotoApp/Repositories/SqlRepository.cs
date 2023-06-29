@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MotoApp.Entities;
 
-public delegate void ItemAdded(object item);
+public delegate void ItemAdded<in T>(T item);
 
 namespace MotoApp.Repositories
 {
@@ -9,8 +9,8 @@ namespace MotoApp.Repositories
     {
         private readonly DbSet<T> _dbSet;
         private readonly DbContext _dbContext;
-        private readonly ItemAdded? _itemAddedCallback;
-        public SqlRepository(DbContext dbContext, ItemAdded? itemAddedCallback = null)
+        private readonly ItemAdded<T>? _itemAddedCallback;
+        public SqlRepository(DbContext dbContext, ItemAdded<T>? itemAddedCallback = null)
         {
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<T>();
