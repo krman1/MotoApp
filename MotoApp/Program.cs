@@ -3,8 +3,8 @@ using MotoApp.Entities;
 using MotoApp.Data;
 using MotoApp.Repositories.Extentions;
 
-var itemAdded = new ItemAdded<Employee>(EmployeeAdded); 
-var employeeRepository = new SqlRepository<Employee>(new MotoAppDbContext(), itemAdded);
+
+var employeeRepository = new SqlRepository<Employee>(new MotoAppDbContext(), EmployeeAdded);
 
 AddEmployees(employeeRepository);
 WriteAllToConsole(employeeRepository);
