@@ -27,14 +27,10 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
     {
         new Employee { FirstName = "Adam" },
         new Employee { FirstName = "Piotr" },
-        new Employee { FirstName = "Zuzia" }
+        new Employee { FirstName = "Ewa" }
     };
     employeeRepository.AddBatch (employees);
 
-    /*employeeRepository.Add(new Employee { FirstName = "Adam" });
-    employeeRepository.Add(new Employee { FirstName = "Piotr" });
-    employeeRepository.Add(new Employee { FirstName = "Zuzia" });
-    employeeRepository.Save();*/
 }
 
 
