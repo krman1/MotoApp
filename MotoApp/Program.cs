@@ -26,7 +26,7 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
     var employees = new[]
     {
         new Employee { FirstName = "Adam" },
-        new Employee { FirstName = "Piotr" },
+        new Employee { FirstName = "Janusz" },
         new Employee { FirstName = "Ewa" }
     };
     employeeRepository.AddBatch (employees);
