@@ -14,6 +14,7 @@ static void EmployeeRepositoryOnItemAdded(object? sender, Employee e)
 
 AddEmployees(employeeRepository);
 WriteAllToConsole(employeeRepository);
+WriteById(employeeRepository);
 
 static void EmployeeAdded(Employee item)
 {
@@ -41,4 +42,12 @@ static void WriteAllToConsole(IReadRepository<IEntity> repository)
     {
         Console.WriteLine(item);
     }
+}
+
+static void WriteById(IReadRepository<IEntity> repository)
+{
+    var data = repository.GetById(2);
+  
+        Console.WriteLine(data);
+    
 }
