@@ -34,14 +34,14 @@ static void EmployeeAdded(Employee item)
 
 }*/
 
-static void AddEmployees(IRepository<Employee> repository)
+static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 {
 
-    new Employee { FirstName = "Adam" };
-    new Employee { FirstName = "Marcin" };
-    new Employee { FirstName = "Ewa" };
-    
-    repository.Save();
+    employeeRepository.Add(new Employee { FirstName = "Adam" });
+    employeeRepository.Add(new Employee { FirstName = "Ewa" });
+    employeeRepository.Add(new Employee { FirstName = "Marcin" });
+
+
 
 }
 
