@@ -13,6 +13,7 @@ static void EmployeeRepositoryOnItemAdded(object? sender, Employee e)
 }
 
 AddEmployees(employeeRepository);
+RemoveEmployees(employeeRepository);
 WriteAllToConsole(employeeRepository);
 WriteById(employeeRepository);
 
@@ -37,18 +38,18 @@ static void EmployeeAdded(Employee item)
 static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 {
 
-    employeeRepository.Add(new Employee { FirstName = "Adam" });
-    employeeRepository.Add(new Employee { FirstName = "Ewa" });
-    employeeRepository.Add(new Employee { FirstName = "Marcin" });
+    employeeRepository.Add(new Employee { FirstName = "Adam1" });
+    employeeRepository.Add(new Employee { FirstName = "Ewa1" });
+    employeeRepository.Add(new Employee { FirstName = "Marcin1" });
 
 
 
 }
 
 
-static void WriteAllToConsole(IReadRepository<IEntity> repository)
+static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
 {
-    var items = repository.GetAll();
+    var items = employeeRepository.GetAll();
     foreach (var item in items)
     {
         Console.WriteLine(item);
@@ -61,4 +62,10 @@ static void WriteById(IReadRepository<IEntity> repository)
   
         Console.WriteLine(data);
     
+}
+
+static void RemoveEmployees(IRepository<Employee> employeeRepository)
+{
+    employeeRepository.Remove(employeeRepository.GetById(1));
+
 }
