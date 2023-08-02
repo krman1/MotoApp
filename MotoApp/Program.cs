@@ -23,7 +23,7 @@ static void EmployeeAdded(Employee item)
 }
 
 
-/*static void AddEmployees(IRepository<Employee> employeeRepository)
+static void AddEmployees(IRepository<Employee> employeeRepository)
 {
     var employees = new[]
     {
@@ -31,11 +31,11 @@ static void EmployeeAdded(Employee item)
         new Employee { FirstName = "Janusz" },
         new Employee { FirstName = "Ewa" }
     };
-    employeeRepository.AddBatch (employees);
+    employeeRepository.AddBatch(employees);
 
-}*/
+}
 
-static void AddEmployees(IWriteRepository<Employee> employeeRepository)
+/*static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 {
 
     employeeRepository.Add(new Employee { FirstName = "Adam1" });
@@ -44,7 +44,7 @@ static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 
 
 
-}
+}*/
 
 
 static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
@@ -58,7 +58,7 @@ static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
 
 static void WriteById(IReadRepository<IEntity> repository)
 {
-    var data = repository.GetById(2);
+    var data = repository.GetById(1);
   
         Console.WriteLine(data);
     
@@ -66,6 +66,6 @@ static void WriteById(IReadRepository<IEntity> repository)
 
 static void RemoveEmployees(IRepository<Employee> employeeRepository)
 {
-    employeeRepository.Remove(employeeRepository.GetById(1));
+    employeeRepository.Remove(employeeRepository.GetById(2));
 
 }
