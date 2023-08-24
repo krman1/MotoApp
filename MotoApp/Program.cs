@@ -2,7 +2,7 @@
 using MotoApp.Entities;
 using MotoApp.Data;
 using MotoApp.Repositories.Extentions;
-
+using System.Runtime.CompilerServices;
 
 var employeeRepository = new SqlRepository<Employee>(new MotoAppDbContext(), EmployeeAdded);
 employeeRepository.ItemAdded += EmployeeRepositoryOnItemAdded;
@@ -23,7 +23,7 @@ static void EmployeeAdded(Employee item)
 }
 
 
-static void AddEmployees(IRepository<Employee> employeeRepository)
+/*static void AddEmployees(IRepository<Employee> employeeRepository)
 {
     var employees = new[]
     {
@@ -33,18 +33,16 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
     };
     employeeRepository.AddBatch(employees);
 
-}
+}*/
 
-/*static void AddEmployees(IWriteRepository<Employee> employeeRepository)
+static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 {
 
-    employeeRepository.Add(new Employee { FirstName = "Adam1" });
-    employeeRepository.Add(new Employee { FirstName = "Ewa1" });
-    employeeRepository.Add(new Employee { FirstName = "Marcin1" });
+    employeeRepository.Add(new Employee { FirstName = "Nowy Adam" });
+    employeeRepository.Add(new Employee { FirstName = "Nowa Ewa" });
+    employeeRepository.Add(new Employee { FirstName = "Nowy Marcin" });
 
-
-
-}*/
+}
 
 
 static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
@@ -66,6 +64,13 @@ static void WriteById(IReadRepository<IEntity> repository)
 
 static void RemoveEmployees(IRepository<Employee> employeeRepository)
 {
-    employeeRepository.Remove(employeeRepository.GetById(2));
+    WriteById(employeeRepository);
+    employeeRepository.Remove(WriteByIdEmpl(employeeRepository));
+}
+
+static Employee WriteByIdEmpl(IReadRepository<Employee> repository)
+{
+    return repository.GetById(1);
+
 
 }
