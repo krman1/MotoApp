@@ -13,7 +13,6 @@ static void EmployeeRepositoryOnItemAdded(object? sender, Employee e)
 }
 
 AddEmployees(employeeRepository);
-RemoveEmployees(employeeRepository);
 WriteAllToConsole(employeeRepository);
 WriteById(employeeRepository);
 
@@ -60,17 +59,4 @@ static void WriteById(IReadRepository<IEntity> repository)
   
         Console.WriteLine(data);
     
-}
-
-static void RemoveEmployees(IRepository<Employee> employeeRepository)
-{
-    WriteById(employeeRepository);
-    employeeRepository.Remove(WriteByIdEmpl(employeeRepository));
-}
-
-static Employee WriteByIdEmpl(IReadRepository<Employee> repository)
-{
-    return repository.GetById(1);
-
-
 }
