@@ -22,26 +22,26 @@ static void EmployeeAdded(Employee item)
 }
 
 
-/*static void AddEmployees(IRepository<Employee> employeeRepository)
+static void AddEmployees(IRepository<Employee> employeeRepository)
 {
     var employees = new[]
     {
-        new Employee { FirstName = "Adam1" },
-        new Employee { FirstName = "Janusz2" },
-        new Employee { FirstName = "Ewa3" }
+        new Employee { FirstName = "Adam" },
+        new Employee { FirstName = "Janusz" },
+        new Employee { FirstName = "Ewa" }
     };
     employeeRepository.AddBatch(employees);
 
-}*/
+}
 
-static void AddEmployees(IWriteRepository<Employee> employeeRepository)
+/*static void AddEmployees(IWriteRepository<Employee> employeeRepository)
 {
 
     employeeRepository.Add(new Employee { FirstName = "Nowy Adam" });
     employeeRepository.Add(new Employee { FirstName = "Nowa Ewa" });
     employeeRepository.Add(new Employee { FirstName = "Nowy Marcin" });
 
-}
+}*/
 
 
 static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
