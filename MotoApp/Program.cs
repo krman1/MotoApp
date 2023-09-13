@@ -34,15 +34,6 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
 
 }
 
-/*static void AddEmployees(IWriteRepository<Employee> employeeRepository)
-{
-
-    employeeRepository.Add(new Employee { FirstName = "Nowy Adam" });
-    employeeRepository.Add(new Employee { FirstName = "Nowa Ewa" });
-    employeeRepository.Add(new Employee { FirstName = "Nowy Marcin" });
-
-}*/
-
 
 static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
 {
