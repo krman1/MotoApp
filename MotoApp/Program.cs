@@ -5,7 +5,7 @@ using MotoApp.Repositories.Extentions;
 using System.Runtime.CompilerServices;
 
 var employeeRepository = new SqlRepository<Employee>(new MotoAppDbContext(), EmployeeAdded);
-employeeRepository.ItemAdded += EmployeeRepositoryOnItemAdded;
+//employeeRepository.ItemAdded += EmployeeRepositoryOnItemAdded;
 
 static void EmployeeRepositoryOnItemAdded(object? sender, Employee e)
 {
@@ -27,7 +27,7 @@ static void AddEmployees(IRepository<Employee> employeeRepository)
 {
     var employees = new[]
     {
-        new Employee { FirstName = "Marcin1" },
+        new Employee { FirstName = "Marcin" },
         new Employee { FirstName = "Iwona" },
         new Employee { FirstName = "Mariusz" }
     };
