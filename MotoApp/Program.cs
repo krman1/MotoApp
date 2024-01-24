@@ -1,4 +1,15 @@
-﻿using MotoApp.Repositories;
+﻿
+using Microsoft.Extensions.DependencyInjection;
+using MotoApp;
+
+var services = new ServiceCollection();
+services.AddSingleton<IApp, App>();
+
+var serviceProvider = services.BuildServiceProvider();
+var app = serviceProvider.GetService<IApp>();
+app.Run();
+
+/*using MotoApp.Repositories;
 using MotoApp.Entities;
 using MotoApp.Data;
 using MotoApp.Repositories.Extentions;
@@ -51,3 +62,4 @@ static void WriteById(IReadRepository<IEntity> repository)
         Console.WriteLine(data);
     
 }
+*/
