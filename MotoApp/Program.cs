@@ -37,17 +37,7 @@ static void EmployeeAdded(Employee item)
 }
 
 
-static void AddEmployees(IRepository<Employee> employeeRepository)
-{
-    var employees = new[]
-    {
-        new Employee { FirstName = "Marcin" },
-        new Employee { FirstName = "Iwona" },
-        new Employee { FirstName = "Mariusz" }
-    };
-    employeeRepository.AddBatch(employees);
 
-}
 
 static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
 {
