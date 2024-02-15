@@ -43,7 +43,17 @@ namespace MotoApp.DataProviders
 
         public decimal GetMinimumPriceOfAllCars()
         {
+            var cars = _carsRepository.GetAll();
+            decimal ret = decimal.MaxValue;
 
+            foreach (var car in cars)
+            {
+                if (car.ListPrice < ret)
+                {
+                    ret = car.ListPrice;
+                }
+            }
+            return ret;
         }
     }
 }
