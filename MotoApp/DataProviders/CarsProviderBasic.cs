@@ -4,7 +4,7 @@ using MotoApp.Repositories;
 
 namespace MotoApp.DataProviders
 {
-    internal class CarsProviderBasic : ICarsProvider
+    internal class CarsProviderBasic 
     {
         private readonly IRepository<Car> _carsRepository;
         public CarsProviderBasic(IRepository<Car> carsRepository) 
