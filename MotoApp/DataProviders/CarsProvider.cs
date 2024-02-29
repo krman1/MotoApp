@@ -1,6 +1,7 @@
 ﻿
 using MotoApp.Entities;
 using MotoApp.Repositories;
+using System.Text;
 
 namespace MotoApp.DataProviders
 {
@@ -14,7 +15,23 @@ namespace MotoApp.DataProviders
         }
         public string AnonymusClass()
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            var list = cars.Select(car => new
+            {
+                Identyfier = car.Id,
+                ProductName = car.Name,
+                ProductType = car.Type,
+            });
+
+            StringBuilder sb = new(2048);
+            foreach (var car in list) 
+            {
+                sb.AppendLine($"Product ID: {car.Identyfier}");
+                sb.AppendLine($"Product Name: {car.ProductName}");
+                sb.AppendLine($"Product type: {car.ProductType}");
+
+            }
+            return sb.ToString();
         }
 
         public decimal GetMinimumPriceOfAllCars()
