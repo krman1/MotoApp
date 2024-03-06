@@ -59,5 +59,25 @@ namespace MotoApp.DataProviders
             var colors = cars.Select(x => x.Color).Distinct().ToList();
             return colors;
         }
+
+        public List<Car> OrderByColorAndName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> OrderByColorAndNameDesc()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> OrderByName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> OrderByNameDescending()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
