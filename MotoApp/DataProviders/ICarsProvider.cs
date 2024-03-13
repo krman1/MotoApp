@@ -16,5 +16,10 @@ namespace MotoApp.DataProviders
         List<Car> OrderByNameDescending();
         List<Car> OrderByColorAndName();
         List<Car> OrderByColorAndNameDesc();
+
+        //where
+        List<Car> WhereStartsWhit(string prefix);
+        List<Car> WhereStartsWhitAndCostIsGreaterThan(string prefix, decimal cost);
+        List<Car> WhereColorIs(string color);
     }
 }

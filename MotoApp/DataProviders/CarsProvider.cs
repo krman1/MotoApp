@@ -89,5 +89,20 @@ namespace MotoApp.DataProviders
             var cars = _carRepository.GetAll();
             return cars.OrderByDescending(x => x.Name).ToList();
         }
+
+        public List<Car> WhereColorIs(string color)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> WhereStartsWhit(string prefix)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> WhereStartsWhitAndCostIsGreaterThan(string prefix, decimal cost)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
