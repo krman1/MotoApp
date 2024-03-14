@@ -1,4 +1,5 @@
 ﻿
+using MotoApp.DataProviders.Extensions;
 using MotoApp.Entities;
 using MotoApp.Repositories;
 using System.Text;
@@ -92,17 +93,20 @@ namespace MotoApp.DataProviders
 
         public List<Car> WhereColorIs(string color)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.ByColor("Red").ToList();
         }
 
         public List<Car> WhereStartsWhit(string prefix)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.Where(x => x.Name.StartsWith(prefix)).ToList(); 
         }
 
         public List<Car> WhereStartsWhitAndCostIsGreaterThan(string prefix, decimal cost)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.Where(x => x.Name.StartsWith(prefix) && x.StandardCost > cost).ToList();
         }
     }
 }
