@@ -35,6 +35,21 @@ namespace MotoApp.DataProviders
             return sb.ToString();
         }
 
+        public Car FirstByColor(string color)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car? FirstOrDefaultByColor(string color)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car FirstOrDefaultByColorWithDefault(string color)
+        {
+            throw new NotImplementedException();
+        }
+
         public decimal GetMinimumPriceOfAllCars()
         {
             var cars = _carRepository.GetAll();
@@ -59,6 +74,11 @@ namespace MotoApp.DataProviders
             var cars = _carRepository.GetAll();
             var colors = cars.Select(x => x.Color).Distinct().ToList();
             return colors;
+        }
+
+        public Car LastByColor(string color)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> OrderByColorAndName()
@@ -89,6 +109,16 @@ namespace MotoApp.DataProviders
         {
             var cars = _carRepository.GetAll();
             return cars.OrderByDescending(x => x.Name).ToList();
+        }
+
+        public Car SingleById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car? SingleOrDefaultById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> WhereColorIs(string color)
