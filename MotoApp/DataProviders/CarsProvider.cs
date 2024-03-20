@@ -35,21 +35,6 @@ namespace MotoApp.DataProviders
             return sb.ToString();
         }
 
-        public Car FirstByColor(string color)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Car? FirstOrDefaultByColor(string color)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Car FirstOrDefaultByColorWithDefault(string color)
-        {
-            throw new NotImplementedException();
-        }
-
         public decimal GetMinimumPriceOfAllCars()
         {
             var cars = _carRepository.GetAll();
@@ -74,11 +59,6 @@ namespace MotoApp.DataProviders
             var cars = _carRepository.GetAll();
             var colors = cars.Select(x => x.Color).Distinct().ToList();
             return colors;
-        }
-
-        public Car LastByColor(string color)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Car> OrderByColorAndName()
@@ -111,16 +91,6 @@ namespace MotoApp.DataProviders
             return cars.OrderByDescending(x => x.Name).ToList();
         }
 
-        public Car SingleById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Car? SingleOrDefaultById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Car> WhereColorIs(string color)
         {
             var cars = _carRepository.GetAll();
@@ -137,6 +107,35 @@ namespace MotoApp.DataProviders
         {
             var cars = _carRepository.GetAll();
             return cars.Where(x => x.Name.StartsWith(prefix) && x.StandardCost > cost).ToList();
+        }
+        public Car FirstByColor(string color)
+        {
+            var cars = _carRepository.GetAll();
+            return cars.First(x => x.Color == color);
+        }
+
+        public Car? FirstOrDefaultByColor(string color)
+        {
+            var cars = _carRepository.GetAll();
+            return cars.FirstOrDefault(x => x.Color == color);
+        }
+
+        public Car FirstOrDefaultByColorWithDefault(string color)
+        {
+            throw new NotImplementedException();
+        }
+        public Car LastByColor(string color)
+        {
+            throw new NotImplementedException();
+        }
+        public Car SingleById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car? SingleOrDefaultById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
