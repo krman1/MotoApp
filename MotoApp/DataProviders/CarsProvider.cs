@@ -122,11 +122,16 @@ namespace MotoApp.DataProviders
 
         public Car FirstOrDefaultByColorWithDefault(string color)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.
+                FirstOrDefault(
+                    x => x.Color == color,
+                    new Car { Id = -1, Name = "NOT FOUND" });
         }
         public Car LastByColor(string color)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.Last(x => x.Color == color);
         }
         public Car SingleById(int id)
         {
