@@ -135,12 +135,14 @@ namespace MotoApp.DataProviders
         }
         public Car SingleById(int id)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.Single(x => x.Id == id);
         }
 
         public Car? SingleOrDefaultById(int id)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.SingleOrDefault(x => x.Id == id);
         }
     }
 }
