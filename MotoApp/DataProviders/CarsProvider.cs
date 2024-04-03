@@ -144,5 +144,20 @@ namespace MotoApp.DataProviders
             var cars = _carRepository.GetAll();
             return cars.SingleOrDefault(x => x.Id == id);
         }
+
+        public List<Car> TakeCars(int howMany)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> TakeCars(Range range)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> TakeCarsWhileNameStarsWith(string prefix)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

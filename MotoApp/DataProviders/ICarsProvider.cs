@@ -29,5 +29,11 @@ namespace MotoApp.DataProviders
         Car LastByColor (string color);
         Car SingleById (int id);
         Car? SingleOrDefaultById (int id);
+
+        // Take
+        List<Car> TakeCars(int howMany);
+        List<Car> TakeCars(Range range);
+        List<Car> TakeCarsWhileNameStarsWith (string prefix);
+
     }
 }
