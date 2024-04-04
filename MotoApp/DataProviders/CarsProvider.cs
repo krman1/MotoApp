@@ -2,6 +2,7 @@
 using MotoApp.DataProviders.Extensions;
 using MotoApp.Entities;
 using MotoApp.Repositories;
+using System;
 using System.Text;
 
 namespace MotoApp.DataProviders
@@ -147,17 +148,29 @@ namespace MotoApp.DataProviders
 
         public List<Car> TakeCars(int howMany)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .OrderBy(x => x.Name)
+                .Take(howMany)
+                .ToList();
         }
 
         public List<Car> TakeCars(Range range)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .OrderBy(x => x.Name)
+                .Take(range)
+                .ToList();
         }
 
         public List<Car> TakeCarsWhileNameStarsWith(string prefix)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .OrderBy(x => x.Name)
+                .TakeWhile(x => x.Name.StartsWith(prefix))
+                .ToList();
         }
     }
 }
