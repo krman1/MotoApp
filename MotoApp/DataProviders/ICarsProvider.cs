@@ -35,5 +35,9 @@ namespace MotoApp.DataProviders
         List<Car> TakeCars(Range range);
         List<Car> TakeCarsWhileNameStarsWith (string prefix);
 
+        //Skip
+        List<Car> SkipCars(int howMany);
+        List<Car> SkipCarsWhileNameStartsWith(string prefix);
+
     }
 }

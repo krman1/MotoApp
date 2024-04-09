@@ -172,5 +172,15 @@ namespace MotoApp.DataProviders
                 .TakeWhile(x => x.Name.StartsWith(prefix))
                 .ToList();
         }
+
+        public List<Car> SkipCars(int howMany)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> SkipCarsWhileNameStartsWith(string prefix)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
