@@ -175,12 +175,20 @@ namespace MotoApp.DataProviders
 
         public List<Car> SkipCars(int howMany)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .OrderBy(x => x.Name)
+                .Skip(howMany)
+                .ToList();
         }
 
         public List<Car> SkipCarsWhileNameStartsWith(string prefix)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .OrderBy(x => x.Name)
+                .SkipWhile(x => x.Name.StartsWith(prefix))
+                .ToList();
         }
     }
 }
