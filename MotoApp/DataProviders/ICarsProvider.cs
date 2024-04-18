@@ -39,5 +39,9 @@ namespace MotoApp.DataProviders
         List<Car> SkipCars(int howMany);
         List<Car> SkipCarsWhileNameStartsWith(string prefix);
 
+        //Distint
+        List<string> DistinctAllColors();
+        List<Car> DistinctByColors();
+
     }
 }

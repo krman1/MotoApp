@@ -190,5 +190,15 @@ namespace MotoApp.DataProviders
                 .SkipWhile(x => x.Name.StartsWith(prefix))
                 .ToList();
         }
+
+        public List<string> DistinctAllColors()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> DistinctByColors()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
