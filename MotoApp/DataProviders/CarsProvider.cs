@@ -193,12 +193,21 @@ namespace MotoApp.DataProviders
 
         public List<string> DistinctAllColors()
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .Select(x => x.Color)
+                .Distinct()
+                .OrderBy(c => c)
+                .ToList();
         }
 
         public List<Car> DistinctByColors()
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars
+                .Distinct()
+                .OrderBy(c=> c.Color)
+                .ToList();
         }
     }
 }
