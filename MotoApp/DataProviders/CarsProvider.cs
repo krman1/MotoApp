@@ -209,5 +209,10 @@ namespace MotoApp.DataProviders
                 .OrderBy(c=> c.Color)
                 .ToList();
         }
+
+        public List<Car[]> ChunkCars(int size)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
