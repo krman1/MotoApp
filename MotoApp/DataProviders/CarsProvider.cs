@@ -212,7 +212,8 @@ namespace MotoApp.DataProviders
 
         public List<Car[]> ChunkCars(int size)
         {
-            throw new NotImplementedException();
+            var cars = _carRepository.GetAll();
+            return cars.Chunk(size) .ToList();
         }
     }
 }
